@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedro Coelho | Portfólio</title>
+    <link
+      rel="icon"
+      href="/frontend/img/ChatGPT Image 21 de mai. de 2025, 17_45_49.png"
+      type="image/png"
+    />
+    <meta
+      name="description"
+      content="Portfólio criativo de Pedro Coelho - Desenvolvedor Front-end e artista digital."
+    />
+    <meta property="og:title" content="Pedro Coelho | Portfólio" />
+    <meta
+      property="og:description"
+      content="Conheça os projetos e habilidades de Pedro Coelho, desenvolvedor e criador digital."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
+    />
+    <meta property="og:type" content="website" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #0f172a;
+        color: white;
+        overflow-x: hidden;
+        transition: background 0.5s, color 0.5s;
+      }
+      .floating-shape {
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(40px);
+        opacity: 0.6;
+        animation: float 12s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      .dark-mode {
+        background: #0f172a;
+        color: #e5e7eb;
+      }
+      .card-project {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .card-project:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+      }
+      .btn-anim {
+        transition: all 0.3s ease;
+      }
+      .btn-anim:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body class="relative" id="body">
+    <button
+      onclick="toggleDarkMode()"
+      class="fixed top-4 right-4 z-50 bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded-full"
+    >
+      🌓
+    </button>
+
+    <div class="floating-shape w-72 h-72 bg-purple-600 top-10 left-10"></div>
+    <div class="floating-shape w-96 h-96 bg-pink-500 top-1/2 left-2/3"></div>
+
+    <section
+      class="min-h-screen flex flex-col justify-center items-center text-center px-4"
+      id="hero"
+    >
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        Olá, eu sou <span class="text-purple-400">Pedro Coelho</span>
+      </h1>
+      <p id="typed-text" class="text-xl text-gray-300 h-8"></p>
+      <div class="mt-8 space-x-4">
+        <a
+          href="#sobre"
+          class="px-6 py-2 bg-purple-600 hover:bg-purple-700 transition rounded-full text-white"
+          >Sobre mim</a
+        >
+        <a
+          href="#projetos"
+          class="px-6 py-2 bg-gray-700 hover:bg-gray-800 transition rounded-full text-white"
+          >Projetos</a
+        >
+      </div>
+    </section>
+
+    <section
+      id="sobre"
+      class="min-h-screen flex flex-col items-center justify-center px-4 text-center"
+    >
+      <img
+        src="/frontend/img/peu.jpg"
+        alt="Pedro Coelho"
+        class="rounded-full w-32 h-32 mb-4 hover:scale-110 transition-transform duration-500"
+      />
+      <h2 class="text-3xl font-bold mb-2">@peuccoelho</h2>
+      <p class="max-w-xl text-gray-300 mb-4">
+        Desenvolvedor Full-Stack com paixão por design e logica. Trabalho com
+        ferramentas Front-End como HTML, CSS, Tailwind e Javascript e
+        ferramentas Back-End como Node.JS e Python.
+      </p>
+      <div class="flex gap-4 justify-center mb-4">
+        <a
+          href="https://www.linkedin.com/in/pedro-coelho-b537682b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app "
+          target="_blank"
+          class="hover:scale-125 transition"
+          ><img
+            src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+            alt="LinkedIn"
+            class="w-6 h-6"
+        /></a>
+        <a
+          href="https://github.com/peuccoelho"
+          target="_blank"
+          class="hover:scale-125 transition"
+          ><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+            alt="GitHub"
+            class="w-6 h-6"
+        /></a>
+      </div>
+    </section>
+
+    <section id="projetos" class="px-4 py-20 bg-gray-900">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
+        Projetos em Destaque
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Projeto 1 -->
+        <a
+          href="https://github.com/peuccoelho/homepudimback"
+          target="_blank"
+          class="card-project bg-gray-800 p-4 rounded-xl hover:ring-2 hover:ring-purple-500 transform transition duration-300 hover:scale-[1.03] block"
+          data-aos="fade-up"
+        >
+          <h3 class="text-lg font-semibold text-white mb-1">
+            Papudim Cardápio
+          </h3>
+          <p class="text-gray-300 text-sm mb-3">
+            Sistema de pedidos online para uma loja de pudins.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+              class="w-5"
+              title="HTML"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+              class="w-5"
+              title="CSS (Tailwind)"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+              class="w-5"
+              title="JavaScript"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
+              class="w-5"
+              title="Node.js"
+            />
+          </div>
+        </a>
+
+        <!-- Projeto 2 -->
+        <a
+          href="https://github.com/peuccoelho/iot-bueiros"
+          target="_blank"
+          class="card-project bg-gray-800 p-4 rounded-xl hover:ring-2 hover:ring-purple-500 transform transition duration-300 hover:scale-[1.03] block"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h3 class="text-lg font-semibold text-white mb-1">
+            Sistema IoT Bueiros
+          </h3>
+          <p class="text-gray-300 text-sm mb-3">
+            Monitoramento inteligente de alagamentos urbanos.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+              class="w-5"
+              title="Python"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/833/833314.png"
+              class="w-5"
+              title="Flask"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/919/919842.png"
+              class="w-5"
+              title="ESP32"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png"
+              class="w-5"
+              title="Firebase"
+            />
+          </div>
+        </a>
+
+        <!-- Projeto 3 -->
+        <a
+          href="https://github.com/peuccoelho/auditorio-dal"
+          target="_blank"
+          class="card-project bg-gray-800 p-4 rounded-xl hover:ring-2 hover:ring-purple-500 transform transition duration-300 hover:scale-[1.03] block"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h3 class="text-lg font-semibold text-white mb-1">
+            Agenda Auditório DAL
+          </h3>
+          <p class="text-gray-300 text-sm mb-3">
+            App para marcação de eventos em auditório institucional.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png"
+              class="w-5"
+              title="React"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+              class="w-5"
+              title="Tailwind CSS"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
+              class="w-5"
+              title="Node.js"
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/919/919836.png"
+              class="w-5"
+              title="MongoDB"
+            />
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="habilidades" class="px-4 py-20">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
+        Habilidades
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center" data-aos="zoom-in">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+            class="w-10 mx-auto mb-2"
+            alt="HTML"
+          />
+          <p>HTML</p>
+          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+            <div class="bg-purple-500 h-2 rounded-full w-11/12"></div>
+          </div>
+        </div>
+        <div class="text-center" data-aos="zoom-in">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+            class="w-10 mx-auto mb-2"
+            alt="CSS"
+          />
+          <p>CSS</p>
+          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+            <div class="bg-purple-500 h-2 rounded-full w-10/12"></div>
+          </div>
+        </div>
+        <div class="text-center" data-aos="zoom-in">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+            class="w-10 mx-auto mb-2"
+            alt="JS"
+          />
+          <p>JavaScript</p>
+          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+            <div class="bg-purple-500 h-2 rounded-full w-9/12"></div>
+          </div>
+        </div>
+        <div class="text-center" data-aos="zoom-in">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+            class="w-10 mx-auto mb-2"
+            alt="Python"
+          />
+          <p>Python</p>
+          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+            <div class="bg-purple-500 h-2 rounded-full w-7/12"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="px-4 py-20">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
+        Fale Comigo
+      </h2>
+      <form
+        class="w-full max-w-lg mx-auto space-y-4"
+        onsubmit="enviarFormulario(event)"
+      >
+        <input
+          required
+          type="text"
+          placeholder="Seu nome"
+          class="w-full px-4 py-2 rounded bg-gray-800 text-white"
+        />
+        <input
+          required
+          type="email"
+          placeholder="Seu email"
+          class="w-full px-4 py-2 rounded bg-gray-800 text-white"
+        />
+        <textarea
+          required
+          rows="4"
+          placeholder="Sua mensagem"
+          class="w-full px-4 py-2 rounded bg-gray-800 text-white"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded text-white"
+        >
+          Enviar
+        </button>
+      </form>
+      <div class="text-center mt-4">
+        <a
+          href="https://wa.me/5571993381929?text=Olá,%20Pedro!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar."
+          target="_blank"
+          class="text-purple-400 hover:underline"
+          >Fale no WhatsApp</a
+        >
+      </div>
+      <div
+        id="mensagem-enviada"
+        class="hidden text-green-400 text-center mt-4 font-semibold"
+      >
+        Mensagem enviada com sucesso! 🎉
+      </div>
+    </section>
+
+    <footer class="text-center py-6 text-gray-500 text-sm">
+      © 2025 Pedro Coelho. Feito com muito café
+    </footer>
+
+    <script>
+      AOS.init({ duration: 1000 });
+
+      ScrollReveal().reveal("#hero h1, #hero p, #hero a", {
+        delay: 200,
+        distance: "50px",
+        origin: "bottom",
+        interval: 200,
+        reset: true,
+      });
+
+      gsap.from(".card-project", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+      });
+    </script>
+  </body>
+</html>
