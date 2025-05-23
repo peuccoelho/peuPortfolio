@@ -6,7 +6,7 @@
     <title>Pedro Coelho | Portfólio</title>
     <link
       rel="icon"
-      href="/frontend/img/ChatGPT Image 21 de mai. de 2025, 17_45_49.png"
+      href="/frontend/img/ChatGPT Image 23 de mai. de 2025, 15_49_31.png"
       type="image/png"
     />
     <meta
@@ -41,7 +41,6 @@
         background: #0f172a;
         color: white;
         overflow-x: hidden;
-        transition: background 0.5s, color 0.5s;
       }
       .floating-shape {
         position: absolute;
@@ -61,40 +60,21 @@
           transform: translateY(0);
         }
       }
-      .dark-mode {
-        background: #0f172a;
-        color: #e5e7eb;
-      }
-      .card-project {
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-      }
-      .card-project:hover {
-        transform: translateY(-8px) scale(1.03);
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-      }
-      .btn-anim {
-        transition: all 0.3s ease;
-      }
-      .btn-anim:hover {
-        transform: scale(1.05) translateY(-2px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
       }
     </style>
   </head>
-  <body class="relative" id="body">
-    <button
-      onclick="toggleDarkMode()"
-      class="fixed top-4 right-4 z-50 bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded-full"
-    >
-      🌓
-    </button>
+  <body class="relative">
+    <div class="hidden sm:block floating-shape w-72 h-72 bg-purple-600 top-10 left-10"></div>
+    <div class="hidden sm:block floating-shape w-72 h-72 bg-pink-500 top-10 left-10"></div>
 
-    <div class="floating-shape w-72 h-72 bg-purple-600 top-10 left-10"></div>
-    <div class="floating-shape w-96 h-96 bg-pink-500 top-1/2 left-2/3"></div>
 
     <section
-      class="min-h-screen flex flex-col justify-center items-center text-center px-4"
       id="hero"
+      class="min-h-screen flex flex-col justify-center items-center text-center px-4"
+      data-aos="fade-up"
     >
       <h1 class="text-4xl md:text-6xl font-bold mb-4">
         Olá, eu sou <span class="text-purple-400">Pedro Coelho</span>
@@ -116,7 +96,8 @@
 
     <section
       id="sobre"
-      class="min-h-screen flex flex-col items-center justify-center px-4 text-center"
+      class="flex flex-col items-center justify-center px-4 text-center"
+      data-aos="fade-up"
     >
       <img
         src="/frontend/img/peu.jpg"
@@ -124,17 +105,19 @@
         class="rounded-full w-32 h-32 mb-4 hover:scale-110 transition-transform duration-500"
       />
       <h2 class="text-3xl font-bold mb-2">@peuccoelho</h2>
+      <br />
       <p class="max-w-xl text-gray-300 mb-4">
-        Desenvolvedor Full-Stack com paixão por design e logica. Trabalho com
+        Desenvolvedor Full-Stack com paixão por design e lógica. Trabalho com
         ferramentas Front-End como HTML, CSS, Tailwind e Javascript e
         ferramentas Back-End como Node.JS e Python.
       </p>
       <div class="flex gap-4 justify-center mb-4">
         <a
-          href="https://www.linkedin.com/in/pedro-coelho-b537682b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app "
+          href="https://www.linkedin.com/in/pedro-coelho-b537682b1"
           target="_blank"
           class="hover:scale-125 transition"
-          ><img
+        >
+          <img
             src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
             alt="LinkedIn"
             class="w-6 h-6"
@@ -143,7 +126,8 @@
           href="https://github.com/peuccoelho"
           target="_blank"
           class="hover:scale-125 transition"
-          ><img
+        >
+          <img
             src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
             alt="GitHub"
             class="w-6 h-6"
@@ -151,219 +135,168 @@
       </div>
     </section>
 
-    <section id="projetos" class="px-4 py-20 bg-gray-900">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
-        Projetos em Destaque
+    <section id="projetos" class="px-4 bg-gray-900" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-center text-white mb-16">
+        Meus Projetos
       </h2>
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Projeto 1 -->
-        <a
-          href="https://github.com/peuccoelho/homepudimback"
-          target="_blank"
-          class="card-project bg-gray-800 p-4 rounded-xl hover:ring-2 hover:ring-purple-500 transform transition duration-300 hover:scale-[1.03] block"
-          data-aos="fade-up"
-        >
-          <h3 class="text-lg font-semibold text-white mb-1">
-            Papudim Cardápio
-          </h3>
-          <p class="text-gray-300 text-sm mb-3">
-            Sistema de pedidos online para uma loja de pudins.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
-              class="w-5"
-              title="HTML"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
-              class="w-5"
-              title="CSS (Tailwind)"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
-              class="w-5"
-              title="JavaScript"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
-              class="w-5"
-              title="Node.js"
-            />
-          </div>
-        </a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+>
+     <!-- Projeto 1 -->
+<a href="https://github.com/peuccoelho/homepudimback" target="_blank" class="block">
+  <div class="bg-purple-300 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 text-left p-4">
+    <div class="flex justify-center gap-3 mb-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="w-8" title="HTML">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="w-8" title="CSS">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="w-8" title="JavaScript">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" class="w-8" title="Node.js">
+    </div>
+    <h3 class="text-lg font-semibold text-center text-gray-900 mb-1">Papudim Cardápio</h3>
+    <p class="text-gray-700 text-sm mb-3 text-center">
+      Sistema de pedidos para uma loja. Utilizando API de pagamentos e pagina de admin com senha.
+    </p>
+    <div class="flex flex-wrap justify-center gap-2">
+      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">HTML</span>
+      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">Tailwind</span>
+      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">JavaScript</span>
+      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">Node.js</span>
+    </div>
+  </div>
+</a>
 
-        <!-- Projeto 2 -->
-        <a
-          href="https://github.com/peuccoelho/iot-bueiros"
-          target="_blank"
-          class="card-project bg-gray-800 p-4 rounded-xl hover:ring-2 hover:ring-purple-500 transform transition duration-300 hover:scale-[1.03] block"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <h3 class="text-lg font-semibold text-white mb-1">
-            Sistema IoT Bueiros
-          </h3>
-          <p class="text-gray-300 text-sm mb-3">
-            Monitoramento inteligente de alagamentos urbanos.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
-              class="w-5"
-              title="Python"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/833/833314.png"
-              class="w-5"
-              title="Flask"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/919/919842.png"
-              class="w-5"
-              title="ESP32"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png"
-              class="w-5"
-              title="Firebase"
-            />
-          </div>
-        </a>
+<!-- Projeto 2 -->
+<a href="https://github.com/peuccoelho/insightsjob" target="_blank" class="block">
+  <div class="bg-purple-300 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 text-left p-4">
+    <div class="flex justify-center gap-3 mb-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" class="w-8" title="Python">
+    </div>
+    <h3 class="text-lg font-semibold text-center text-gray-900 mb-1">Insights de empregos</h3>
+    <p class="text-gray-700 text-sm mb-3 text-center">
+      Projeto de analise de dados para analisar a situção do mercado de T.I.
+    </p>
+    <div class="flex flex-wrap justify-center gap-2">
+      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Python</span>
+      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Pandas</span>
+      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">SkLearn</span>
+      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Streamlit</span>
+    </div>
+  </div>
+</a>
 
-        <!-- Projeto 3 -->
-        <a
-          href="https://github.com/peuccoelho/auditorio-dal"
-          target="_blank"
-          class="card-project bg-gray-800 p-4 rounded-xl hover:ring-2 hover:ring-purple-500 transform transition duration-300 hover:scale-[1.03] block"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <h3 class="text-lg font-semibold text-white mb-1">
-            Agenda Auditório DAL
-          </h3>
-          <p class="text-gray-300 text-sm mb-3">
-            App para marcação de eventos em auditório institucional.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png"
-              class="w-5"
-              title="React"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
-              class="w-5"
-              title="Tailwind CSS"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
-              class="w-5"
-              title="Node.js"
-            />
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/919/919836.png"
-              class="w-5"
-              title="MongoDB"
-            />
-          </div>
-        </a>
-      </div>
+<!-- Projeto 3 -->
+<a href="https://github.com/peuccoelho/StackPeu-CLI" target="_blank" class="block">
+  <div class="bg-purple-300 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 text-left p-4">
+    <div class="flex justify-center gap-3 mb-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" class="w-8" title="Python">
+    </div>
+    <h3 class="text-lg font-semibold text-center text-gray-900 mb-1">CLI Full-Stack</h3>
+    <p class="text-gray-700 text-sm mb-3 text-center">
+      CLI feita para automatizar os processos de projetos Front, Back ou Full-Stack.
+    </p>
+    <div class="flex flex-wrap justify-center gap-2">
+      <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">Python</span>
+    </div>
+  </div>
+</a>
     </section>
 
-    <section id="habilidades" class="px-4 py-20">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
-        Habilidades
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="text-center" data-aos="zoom-in">
+    <section id="habilidades" class="px-4" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-center mb-10">Habilidades</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div class="text-center">
           <img
             src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
-            class="w-10 mx-auto mb-2"
+            class="w-8 sm:w-10 mx-auto mb-2"
+
             alt="HTML"
           />
           <p>HTML</p>
-          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+          <div class="w-full bg-gray-600 rounded-full h-2 mt-1">
             <div class="bg-purple-500 h-2 rounded-full w-11/12"></div>
           </div>
         </div>
-        <div class="text-center" data-aos="zoom-in">
+        <div class="text-center">
           <img
             src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
-            class="w-10 mx-auto mb-2"
+            class="w-8 sm:w-10 mx-auto mb-2"
+
             alt="CSS"
           />
           <p>CSS</p>
-          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+          <div class="w-full bg-gray-600 rounded-full h-2 mt-1">
             <div class="bg-purple-500 h-2 rounded-full w-10/12"></div>
           </div>
         </div>
-        <div class="text-center" data-aos="zoom-in">
+        <div class="text-center">
           <img
             src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
-            class="w-10 mx-auto mb-2"
+            class="w-8 sm:w-10 mx-auto mb-2"
+
             alt="JS"
           />
           <p>JavaScript</p>
-          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+          <div class="w-full bg-gray-600 rounded-full h-2 mt-1">
             <div class="bg-purple-500 h-2 rounded-full w-9/12"></div>
           </div>
         </div>
-        <div class="text-center" data-aos="zoom-in">
+        <div class="text-center">
           <img
             src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
-            class="w-10 mx-auto mb-2"
+            class="w-8 sm:w-10 mx-auto mb-2"
+
             alt="Python"
           />
           <p>Python</p>
-          <div class="w-full bg-gray-700 rounded-full h-2 mt-1">
+          <div class="w-full bg-gray-600 rounded-full h-2 mt-1">
+            <div class="bg-purple-500 h-2 rounded-full w-8/12"></div>
+          </div>
+        </div>
+        <div class="text-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
+            class="w-8 sm:w-10 mx-auto mb-2"
+
+            alt="Node.js"
+          />
+          <p>Node.js</p>
+          <div class="w-full bg-gray-600 rounded-full h-2 mt-1">
             <div class="bg-purple-500 h-2 rounded-full w-7/12"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="px-4 py-20">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
-        Fale Comigo
-      </h2>
+    <section id="contato" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-center mb-8">Fale Comigo</h2>
       <form
-        class="w-full max-w-lg mx-auto space-y-4"
+        class="w-full max-w-md sm:max-w-xl mx-auto bg-gray-900 p-8 rounded-xl shadow-xl space-y-4"
         onsubmit="enviarFormulario(event)"
       >
         <input
           required
           type="text"
           placeholder="Seu nome"
-          class="w-full px-4 py-2 rounded bg-gray-800 text-white"
+          class="w-full px-4 py-3 rounded bg-gray-700 text-white"
         />
         <input
           required
           type="email"
           placeholder="Seu email"
-          class="w-full px-4 py-2 rounded bg-gray-800 text-white"
+          class="w-full px-4 py-3 rounded bg-gray-700 text-white"
         />
         <textarea
           required
           rows="4"
           placeholder="Sua mensagem"
-          class="w-full px-4 py-2 rounded bg-gray-800 text-white"
+          class="w-full px-4 py-3 rounded bg-gray-700 text-white"
         ></textarea>
         <button
           type="submit"
-          class="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded text-white"
+          class="w-full px-4 py-3 bg-purple-600 hover:bg-purple-700 rounded text-white font-semibold"
         >
-          Enviar
+          Enviar Mensagem
         </button>
       </form>
-      <div class="text-center mt-4">
-        <a
-          href="https://wa.me/5571993381929?text=Olá,%20Pedro!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar."
-          target="_blank"
-          class="text-purple-400 hover:underline"
-          >Fale no WhatsApp</a
-        >
-      </div>
+      
       <div
         id="mensagem-enviada"
         class="hidden text-green-400 text-center mt-4 font-semibold"
@@ -373,26 +306,9 @@
     </section>
 
     <footer class="text-center py-6 text-gray-500 text-sm">
-      © 2025 Pedro Coelho. Feito com muito café
+      © 2025 Pedro Coelho. Feito com muito café ☕
     </footer>
 
-    <script>
-      AOS.init({ duration: 1000 });
-
-      ScrollReveal().reveal("#hero h1, #hero p, #hero a", {
-        delay: 200,
-        distance: "50px",
-        origin: "bottom",
-        interval: 200,
-        reset: true,
-      });
-
-      gsap.from(".card-project", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.2,
-      });
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>

@@ -1,8 +1,8 @@
-// Animação de digitação para o texto
+// scripts.js
 const phrases = [
-  "Desenvolvedor Front-end", 
-  "Criativo Digital", 
-  "Apaixonado por design e código"
+  "Dev Full-Stack",
+  "Passionate about coding",
+  "Busque a perfeição"
 ];
 
 let currentPhrase = 0;
@@ -32,20 +32,37 @@ function erase() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(type, 500);
+
+  AOS.init({ duration: 1000 });
+
+  ScrollReveal().reveal("#hero h1, #hero p, #hero a", {
+    delay: 200,
+    distance: "50px",
+    origin: "bottom",
+    interval: 200,
+    reset: true
+  });
+
+  gsap.from(".card-project", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2
+  });
 });
-AOS.init({ duration: 1000 });
 
-      ScrollReveal().reveal("#hero h1, #hero p, #hero a", {
-        delay: 200,
-        distance: "50px",
-        origin: "bottom",
-        interval: 200,
-        reset: true,
-      });
+function enviarFormulario(event) {
+  event.preventDefault();
 
-      gsap.from(".card-project", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.2,
-      });
+  const nome = document.querySelector('input[placeholder="Seu nome"]').value;
+  const email = document.querySelector('input[placeholder="Seu email"]').value;
+  const mensagem = document.querySelector('textarea[placeholder="Sua mensagem"]').value;
+
+  const textoWhatsApp = `Olá Pedro! Meu nome é ${nome}, meu e-mail é ${email} e gostaria de dizer: ${mensagem}`;
+
+  const link = `https://wa.me/5571993381929?text=${encodeURIComponent(textoWhatsApp)}`;
+
+  window.open(link, '_blank');
+  document.getElementById("mensagem-enviada").classList.remove("hidden");
+  document.getElementById("mensagem-enviada").scrollIntoView({ behavior: 'smooth' });
+}
