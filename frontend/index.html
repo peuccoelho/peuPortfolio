@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pedro Coelho | Portfólio</title>
-   <link rel="icon" href="Chat.png" />
+    <link rel="icon" href="Chat.png" />
     <meta
       name="description"
       content="Portfólio criativo de Pedro Coelho - Desenvolvedor Front-end e artista digital."
@@ -63,9 +63,12 @@
     </style>
   </head>
   <body class="relative">
-    <div class="hidden sm:block floating-shape w-72 h-72 bg-purple-600 top-10 left-10"></div>
-    <div class="hidden sm:block floating-shape w-72 h-72 bg-pink-500 top-10 left-10"></div>
-
+    <div
+      class="hidden sm:block floating-shape w-72 h-72 bg-purple-600 top-10 left-10"
+    ></div>
+    <div
+      class="hidden sm:block floating-shape w-72 h-72 bg-pink-500 top-10 left-10"
+    ></div>
 
     <section
       id="hero"
@@ -131,68 +134,106 @@
       </div>
     </section>
 
-    <section id="projetos" class="px-4 bg-gray-900" data-aos="fade-up">
-      <h2 class="text-4xl font-bold text-center text-white mb-16">
-        Meus Projetos
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
->
-     <!-- Projeto 1 -->
-<a href="https://github.com/peuccoelho/homepudimback" target="_blank" class="block">
-  <div class="bg-purple-300 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 text-left p-4">
-    <div class="flex justify-center gap-3 mb-4">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="w-8" title="HTML">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="w-8" title="CSS">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="w-8" title="JavaScript">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" class="w-8" title="Node.js">
-    </div>
-    <h3 class="text-lg font-semibold text-center text-gray-900 mb-1">Papudim Cardápio</h3>
-    <p class="text-gray-700 text-sm mb-3 text-center">
-      Sistema de pedidos para uma loja. Utilizando API de pagamentos e pagina de admin com senha.
-    </p>
-    <div class="flex flex-wrap justify-center gap-2">
-      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">HTML</span>
-      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">Tailwind</span>
-      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">JavaScript</span>
-      <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs">Node.js</span>
-    </div>
-  </div>
-</a>
+    <!-- Seção de Projetos com carrossel real -->
+    <section id="projetos" class="py-16 text-white relative">
+      <h2 class="text-3xl font-bold text-center mb-10">Meus Projetos</h2>
 
-<!-- Projeto 2 -->
-<a href="https://github.com/peuccoelho/insightsjob" target="_blank" class="block">
-  <div class="bg-purple-300 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 text-left p-4">
-    <div class="flex justify-center gap-3 mb-4">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" class="w-8" title="Python">
-    </div>
-    <h3 class="text-lg font-semibold text-center text-gray-900 mb-1">Insights de empregos</h3>
-    <p class="text-gray-700 text-sm mb-3 text-center">
-      Projeto de analise de dados para analisar a situção do mercado de T.I.
-    </p>
-    <div class="flex flex-wrap justify-center gap-2">
-      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Python</span>
-      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Pandas</span>
-      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">SkLearn</span>
-      <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs">Streamlit</span>
-    </div>
-  </div>
-</a>
+      <div class="relative max-w-md mx-auto overflow-hidden">
+        <div
+          id="carousel"
+          class="flex transition-transform duration-500 ease-in-out"
+          style="transform: translateX(0%)"
+        >
+          <!-- Card 1 -->
+          <div class="min-w-full px-4">
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6">
+              <h3 class="text-xl font-semibold mb-2">Sistema de Estoque</h3>
+              <p class="text-sm text-gray-200 mb-4">
+                Controle logístico militar com cadastro de itens e relatórios.
+              </p>
+              <div class="flex gap-2 text-xs mb-3">
+                <span
+                  class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-green-500/20 text-green-300 px-2 py-1 rounded-full"
+                  >Flask</span
+                >
+              </div>
+              <a href="#" class="text-blue-400 hover:underline"
+                >Ver Projeto →</a
+              >
+            </div>
+          </div>
 
-<!-- Projeto 3 -->
-<a href="https://github.com/peuccoelho/StackPeu-CLI" target="_blank" class="block">
-  <div class="bg-purple-300 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 text-left p-4">
-    <div class="flex justify-center gap-3 mb-4">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" class="w-8" title="Python">
-    </div>
-    <h3 class="text-lg font-semibold text-center text-gray-900 mb-1">CLI Full-Stack</h3>
-    <p class="text-gray-700 text-sm mb-3 text-center">
-      CLI feita para automatizar os processos de projetos Front, Back ou Full-Stack.
-    </p>
-    <div class="flex flex-wrap justify-center gap-2">
-      <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs">Python</span>
-    </div>
-  </div>
-</a>
+          <!-- Card 2 -->
+          <div class="min-w-full px-4">
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6">
+              <h3 class="text-xl font-semibold mb-2">Papudim</h3>
+              <p class="text-sm text-gray-200 mb-4">
+                Cardápio online animado com integração ao WhatsApp.
+              </p>
+              <div class="flex gap-2 text-xs mb-3">
+                <span
+                  class="bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="bg-pink-500/20 text-pink-300 px-2 py-1 rounded-full"
+                  >Tailwind</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+              <a href="#" class="text-blue-400 hover:underline"
+                >Ver Projeto →</a
+              >
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="min-w-full px-4">
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6">
+              <h3 class="text-xl font-semibold mb-2">Reservas de Auditório</h3>
+              <p class="text-sm text-gray-200 mb-4">
+                App para marcar eventos com datas e horários.
+              </p>
+              <div class="flex gap-2 text-xs mb-3">
+                <span
+                  class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full"
+                  >Tailwind</span
+                >
+              </div>
+              <a href="#" class="text-blue-400 hover:underline"
+                >Ver Projeto →</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="flex justify-between mt-6 px-8">
+          <button
+            id="prev"
+            class="text-white text-2xl hover:scale-125 transition"
+          >
+            &#8592;
+          </button>
+          <button
+            id="next"
+            class="text-white text-2xl hover:scale-125 transition"
+          >
+            &#8594;
+          </button>
+        </div>
+      </div>
     </section>
 
     <section id="habilidades" class="px-4" data-aos="fade-up">
@@ -202,7 +243,6 @@
           <img
             src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
             class="w-8 sm:w-10 mx-auto mb-2"
-
             alt="HTML"
           />
           <p>HTML</p>
@@ -214,7 +254,6 @@
           <img
             src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
             class="w-8 sm:w-10 mx-auto mb-2"
-
             alt="CSS"
           />
           <p>CSS</p>
@@ -226,7 +265,6 @@
           <img
             src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
             class="w-8 sm:w-10 mx-auto mb-2"
-
             alt="JS"
           />
           <p>JavaScript</p>
@@ -238,7 +276,6 @@
           <img
             src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
             class="w-8 sm:w-10 mx-auto mb-2"
-
             alt="Python"
           />
           <p>Python</p>
@@ -250,7 +287,6 @@
           <img
             src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
             class="w-8 sm:w-10 mx-auto mb-2"
-
             alt="Node.js"
           />
           <p>Node.js</p>
@@ -292,7 +328,7 @@
           Enviar Mensagem
         </button>
       </form>
-      
+
       <div
         id="mensagem-enviada"
         class="hidden text-green-400 text-center mt-4 font-semibold"

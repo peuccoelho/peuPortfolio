@@ -66,3 +66,59 @@ function enviarFormulario(event) {
   document.getElementById("mensagem-enviada").classList.remove("hidden");
   document.getElementById("mensagem-enviada").scrollIntoView({ behavior: 'smooth' });
 }
+
+const carousel = document.getElementById("carousel");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const totalCards = carousel.children.length;
+let currentIndex = 0;
+
+function updateCarousel() {
+  const offset = -currentIndex * carousel.clientWidth;
+  carousel.style.transform = `translateX(${offset}px)`;
+}
+
+// Botões
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+  updateCarousel();
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % totalCards;
+  updateCarousel();
+});
+
+// Swipe para mobile
+let startX = 0;
+let isSwiping = false;
+
+carousel.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  isSwiping = true;
+});
+
+carousel.addEventListener("touchmove", (e) => {
+  if (!isSwiping) return;
+  const deltaX = e.touches[0].clientX - startX;
+
+  if (Math.abs(deltaX) > 50) {
+    isSwiping = false;
+    if (deltaX > 0) {
+      currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+    } else {
+      currentIndex = (currentIndex + 1) % totalCards;
+    }
+    updateCarousel();
+  }
+});
+
+carousel.addEventListener("touchend", () => {
+  isSwiping = false;
+});
+
+// Resize handler (importante para responsividade)
+window.addEventListener("resize", updateCarousel);
+
+// Inicializa
+updateCarousel();
