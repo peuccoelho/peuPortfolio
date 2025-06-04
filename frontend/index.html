@@ -23,6 +23,7 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
@@ -62,12 +63,15 @@
       }
     </style>
   </head>
-  <body class="relative">
+  <body class="relative bg-[#1e293b]">
+    <!-- Efeito Parallax com Rellax nas formas de fundo -->
     <div
       class="hidden sm:block floating-shape w-72 h-72 bg-purple-600 top-10 left-10"
+      data-rellax-speed="2"
     ></div>
     <div
       class="hidden sm:block floating-shape w-72 h-72 bg-pink-500 top-10 left-10"
+      data-rellax-speed="-2"
     ></div>
 
     <section
@@ -86,10 +90,11 @@
           >Sobre mim</a
         >
         <a
-          href="#projetos"
+          href="projetos.html"
           class="px-6 py-2 bg-gray-700 hover:bg-gray-800 transition rounded-full text-white"
-          >Projetos</a
         >
+          Projetos
+        </a>
       </div>
     </section>
 
@@ -131,109 +136,6 @@
             alt="GitHub"
             class="w-6 h-6"
         /></a>
-      </div>
-    </section>
-
-    <!-- Seção de Projetos com carrossel real -->
-    <section id="projetos" class="py-16 text-white relative">
-      <h2 class="text-3xl font-bold text-center mb-10">Meus Projetos</h2>
-
-      <div class="relative max-w-md mx-auto overflow-hidden">
-        <div
-          id="carousel"
-          class="flex transition-transform duration-500 ease-in-out"
-          style="transform: translateX(0%)"
-        >
-          <!-- Card 1 -->
-          <div class="min-w-full px-4">
-            <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6">
-              <h3 class="text-xl font-semibold mb-2">Papudim</h3>
-              <p class="text-sm text-gray-200 mb-4">
-                Loja virtual de vendas de pudim. Consumação de API de
-                pagamentos, pagina de admin.
-              </p>
-              <div class="flex gap-2 text-xs mb-3">
-                <span
-                  class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full"
-                  >HTML</span
-                >
-                <span
-                  class="bg-green-500/20 text-green-300 px-2 py-1 rounded-full"
-                  >Tailwind</span
-                >
-                <span
-                  class="bg-green-500/20 text-green-300 px-2 py-1 rounded-full"
-                  >NodeJS</span
-                >
-              </div>
-              <a
-                href="https://github.com/peuccoelho/homepudimback"
-                class="text-blue-400 hover:underline"
-                >Ver Projeto →</a
-              >
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="min-w-full px-4">
-            <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6">
-              <h3 class="text-xl font-semibold mb-2">InsightJob</h3>
-              <p class="text-sm text-gray-200 mb-4">
-                Programa para prever seu sucesso no mercado de TI. Projeto de
-                analise de dados.
-              </p>
-              <div class="flex gap-2 text-xs mb-3">
-                <span
-                  class="bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full"
-                  >Python</span
-                >
-              </div>
-              <a
-                href="https://github.com/peuccoelho/insightsjob"
-                class="text-blue-400 hover:underline"
-                >Ver Projeto →</a
-              >
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="min-w-full px-4">
-            <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6">
-              <h3 class="text-xl font-semibold mb-2">StackPeu CLI</h3>
-              <p class="text-sm text-gray-200 mb-4">
-                CLI para projetos Front, Back ou Full-Stack. Para otimizar o
-                tempo da sua equipe.
-              </p>
-              <div class="flex gap-2 text-xs mb-3">
-                <span
-                  class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full"
-                  >Python</span
-                >
-              </div>
-              <a
-                href="https://github.com/peuccoelho/StackPeu-CLI"
-                class="text-blue-400 hover:underline"
-                >Ver Projeto →</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Controles -->
-        <div class="flex justify-between mt-6 px-8">
-          <button
-            id="prev"
-            class="text-white text-2xl hover:scale-125 transition"
-          >
-            &#8592;
-          </button>
-          <button
-            id="next"
-            class="text-white text-2xl hover:scale-125 transition"
-          >
-            &#8594;
-          </button>
-        </div>
       </div>
     </section>
 
@@ -298,38 +200,40 @@
       </div>
     </section>
 
-    <section id="contato" data-aos="fade-up">
-      <h2 class="text-4xl font-bold text-center mb-8">Fale Comigo</h2>
+    <!-- Modernize o formulário com mais AOS e parallax -->
+    <section id="contato" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-3xl font-bold text-center mb-6 text-purple-300">
+        Fale Comigo
+      </h2>
       <form
-        class="w-full max-w-md sm:max-w-xl mx-auto bg-gray-900 p-8 rounded-xl shadow-xl space-y-4"
+        class="w-full max-w-sm mx-auto bg-[#1e293b] p-6 rounded-2xl shadow-lg space-y-4 border border-purple-800/30"
         onsubmit="enviarFormulario(event)"
       >
         <input
           required
           type="text"
           placeholder="Seu nome"
-          class="w-full px-4 py-3 rounded bg-gray-700 text-white"
+          class="w-full bg-transparent border-b border-purple-700 focus:border-purple-400 outline-none text-white placeholder-gray-400 py-2 transition"
         />
         <input
           required
           type="email"
           placeholder="Seu email"
-          class="w-full px-4 py-3 rounded bg-gray-700 text-white"
+          class="w-full bg-transparent border-b border-purple-700 focus:border-purple-400 outline-none text-white placeholder-gray-400 py-2 transition"
         />
         <textarea
           required
           rows="4"
           placeholder="Sua mensagem"
-          class="w-full px-4 py-3 rounded bg-gray-700 text-white"
+          class="w-full bg-transparent border-b border-purple-700 focus:border-purple-400 outline-none text-white placeholder-gray-400 py-2 resize-none transition"
         ></textarea>
         <button
           type="submit"
-          class="w-full px-4 py-3 bg-purple-600 hover:bg-purple-700 rounded text-white font-semibold"
+          class="w-full px-4 py-2 bg-purple-700 hover:bg-purple-600 rounded-full text-white font-semibold transition"
         >
-          Enviar Mensagem
+          Enviar
         </button>
       </form>
-
       <div
         id="mensagem-enviada"
         class="hidden text-green-400 text-center mt-4 font-semibold"
@@ -343,5 +247,11 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+      // Inicialize o Rellax após o DOM carregar
+      document.addEventListener("DOMContentLoaded", function () {
+        new Rellax(".floating-shape");
+      });
+    </script>
   </body>
 </html>

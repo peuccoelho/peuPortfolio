@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos | Pedro Coelho</title>
+    <link rel="icon" href="Chat.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: #1e293b;
+        color: #e5e7eb;
+        overflow-x: hidden;
+      }
+      .floating-shape {
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(40px);
+        opacity: 0.18;
+        animation: float 12s ease-in-out infinite;
+        z-index: 0;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="relative bg-[#1e293b]">
+    <!-- Parallax shapes -->
+    <div
+      class="hidden sm:block floating-shape w-60 h-60 bg-purple-700 top-10 left-10"
+      data-rellax-speed="2"
+    ></div>
+    <div
+      class="hidden sm:block floating-shape w-40 h-40 bg-pink-500 bottom-10 right-10"
+      data-rellax-speed="-2"
+    ></div>
+
+    <header
+      class="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 py-6 relative z-10 gap-2 sm:gap-0"
+    >
+      <nav class="flex flex-wrap justify-center gap-3">
+        <a href="index.html" class="text-gray-300 hover:text-white transition"
+          >Início</a
+        >
+        <a href="projetos.html" class="text-white font-semibold">Projetos</a>
+        <a
+          href="index.html#contato"
+          class="text-gray-300 hover:text-white transition"
+          >Contato</a
+        >
+      </nav>
+    </header>
+
+    <section
+      class="text-center py-10 sm:py-12 relative z-10 flex flex-col items-center px-4"
+    >
+      <img
+        src="Chat.png"
+        alt="Logo Pedro Coelho"
+        class="w-20 h-20 rounded-lg mb-4"
+        data-aos="fade-down"
+      />
+      <p
+        class="text-base sm:text-lg text-gray-400 max-w-md sm:max-w-xl mx-auto"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        Veja alguns dos meus trabalhos mais recentes.
+      </p>
+    </section>
+
+    <main class="relative z-10">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-xs xs:max-w-md sm:max-w-3xl lg:max-w-5xl mx-auto px-4 pb-16"
+      >
+        <!-- Projeto: Papudim -->
+        <div class="group relative">
+          <div
+            class="rounded-3xl border border-purple-500/30 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300 shadow-xl p-6 xs:p-8 flex flex-col gap-5 h-full items-center text-center transform hover:scale-[1.02]"
+            data-aos="fade-up"
+            data-aos-delay="0"
+            data-aos-duration="800"
+          >
+            <div class="flex items-center gap-3 justify-center">
+              <img src="papudimlogo.png" class="w-10 h-10" alt="Papudim" />
+              <span class="text-lg font-semibold text-purple-200">Papudim</span>
+            </div>
+            <p class="text-gray-200 text-sm flex-1">
+              Loja virtual de vendas de pudim. API de pagamentos e dashboard
+              para administrador.
+            </p>
+            <div class="flex flex-wrap justify-center gap-2 text-xs">
+              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                >HTML</span
+              >
+              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                >Tailwind</span
+              >
+              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                >NodeJS</span
+              >
+            </div>
+            <div class="flex gap-3 mt-3 text-sm">
+              <a
+                href="https://github.com/peuccoelho/homepudimback"
+                target="_blank"
+                class="text-purple-300 hover:underline transition"
+                >Ver Projeto</a
+              >
+              <span class="text-gray-500">|</span>
+              <a
+                href="https://papudim.vercel.app"
+                target="_blank"
+                class="text-green-300 hover:underline transition"
+                >Ver Deploy</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Projeto: InsightJob -->
+        <div class="group relative">
+          <div
+            class="rounded-3xl border border-purple-500/30 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300 shadow-xl p-6 xs:p-8 flex flex-col gap-5 h-full items-center text-center transform hover:scale-[1.02]"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="800"
+          >
+            <div class="flex items-center gap-3 justify-center">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+                class="w-10 h-10"
+                alt="InsightJob"
+              />
+              <span class="text-lg font-semibold text-purple-200"
+                >InsightJob</span
+              >
+            </div>
+            <p class="text-gray-200 text-sm flex-1">
+              Programa para prever seu sucesso no mercado de TI. Projeto de
+              análise de dados.
+            </p>
+            <div class="flex flex-wrap justify-center gap-2 text-xs">
+              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                >Python</span
+              >
+            </div>
+            <div class="flex gap-3 mt-3 text-sm">
+              <a
+                href="https://github.com/peuccoelho/insightsjob"
+                target="_blank"
+                class="text-purple-300 hover:underline transition"
+                >Ver Projeto</a
+              >
+              <span class="text-gray-500">|</span>
+              <a
+                href="#"
+                class="text-green-300 hover:underline transition opacity-40 cursor-not-allowed"
+                title="Deploy indisponível"
+                >Ver Deploy</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Projeto: StackPeu CLI -->
+        <div class="group relative">
+          <div
+            class="rounded-3xl border border-purple-500/30 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300 shadow-xl p-6 xs:p-8 flex flex-col gap-5 h-full items-center text-center transform hover:scale-[1.02]"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="800"
+          >
+            <div class="flex items-center gap-3 justify-center">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+                class="w-10 h-10"
+                alt="StackPeu CLI"
+              />
+              <span class="text-lg font-semibold text-purple-200"
+                >StackPeu CLI</span
+              >
+            </div>
+            <p class="text-gray-200 text-sm flex-1">
+              CLI para projetos Front, Back ou Full-Stack. Para otimizar o tempo
+              da sua equipe.
+            </p>
+            <div class="flex flex-wrap justify-center gap-2 text-xs">
+              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                >Python</span
+              >
+            </div>
+            <div class="flex gap-3 mt-3 text-sm">
+              <a
+                href="https://github.com/peuccoelho/StackPeu-CLI"
+                target="_blank"
+                class="text-purple-300 hover:underline transition"
+                >Ver Projeto</a
+              >
+              <span class="text-gray-500">|</span>
+              <a
+                href="#"
+                class="text-green-300 hover:underline transition opacity-40 cursor-not-allowed"
+                title="Deploy indisponível"
+                >Ver Deploy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-xs relative z-10 px-4">
+      © 2025 Pedro Coelho. Feito com muito café ☕
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Rellax(".floating-shape");
+        AOS.init({ duration: 900 });
+      });
+    </script>
+  </body>
+</html>
