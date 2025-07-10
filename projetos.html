@@ -41,7 +41,7 @@
       }
     </style>
   </head>
-  <body class="relative bg-[#1e293b]">
+  <body class="relative bg-[#0f172a]">
     <!-- Parallax shapes -->
     <div
       class="hidden sm:block floating-shape w-60 h-60 bg-purple-700 top-10 left-10"
@@ -52,21 +52,52 @@
       data-rellax-speed="-2"
     ></div>
 
-    <header
-      class="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 py-6 relative z-10 gap-2 sm:gap-0"
+    <!-- Navegação fixa melhorada -->
+    <nav
+      class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 nav-fixed rounded-full px-4 py-2"
     >
-      <nav class="flex flex-wrap justify-center gap-3">
-        <a href="index.html" class="text-gray-300 hover:text-white transition"
-          >Início</a
+      <div class="flex gap-2 text-sm">
+        <a
+          href="index.html"
+          class="nav-item text-gray-300 hover:text-purple-400"
+          data-section="hero"
         >
-        <a href="projetos.html" class="text-white font-semibold">Projetos</a>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+            />
+          </svg>
+          <span class="hidden sm:inline">home</span>
+        </a>
+        <a
+          href="#projetos"
+          class="nav-item text-gray-300 hover:text-purple-400 active"
+          data-section="projetos"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="hidden sm:inline">projects</span>
+        </a>
         <a
           href="index.html#contato"
-          class="text-gray-300 hover:text-white transition"
-          >Contato</a
+          class="nav-item text-gray-300 hover:text-purple-400"
+          data-section="contato"
         >
-      </nav>
-    </header>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            />
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+          </svg>
+          <span class="hidden sm:inline">contact</span>
+        </a>
+      </div>
+    </nav>
 
     <section
       class="text-center py-10 sm:py-12 relative z-10 flex flex-col items-center px-4"
@@ -87,130 +118,178 @@
     </section>
 
     <main class="relative z-10">
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-xs xs:max-w-md sm:max-w-3xl lg:max-w-5xl mx-auto px-4 pb-16"
-      >
-        <!-- Projeto: InsightJob -->
-        <div class="group relative">
-          <div
-            class="rounded-3xl border border-purple-500/30 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300 shadow-xl p-6 xs:p-8 flex flex-col gap-5 h-full items-center text-center transform hover:scale-[1.02]"
-            data-aos="fade-up"
-            data-aos-delay="100"
-            data-aos-duration="800"
-          >
-            <div class="flex items-center gap-3 justify-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
-                class="w-10 h-10"
-                alt="InsightJob"
-              />
-              <span class="text-lg font-semibold text-purple-200"
-                >InsightJob</span
+      <section id="projetos" class="terminal-grid relative py-16 px-4">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10 max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <div class="flex items-center justify-center gap-3 mb-4">
+              <div
+                class="h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1"
+              ></div>
+              <div
+                class="flex items-center gap-2 bg-gray-800/50 px-4 py-2 rounded-full"
               >
+                <svg
+                  class="w-5 h-5 text-purple-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-mono text-purple-400">projetos.json</span>
+              </div>
+              <div
+                class="h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1"
+              ></div>
             </div>
-            <p class="text-gray-200 text-sm flex-1">
-              Programa para prever seu sucesso no mercado de TI. Projeto de
-              análise de dados.
+            <h2
+              class="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+            >
+              Projetos em Destaque
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto mt-4">
+              Veja alguns dos meus trabalhos mais recentes.
             </p>
-            <div class="flex flex-wrap justify-center gap-2 text-xs">
-              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
-                >Python</span
-              >
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Projeto: InsightJob -->
+            <div
+              class="code-card rounded-3xl p-0 overflow-hidden flex flex-col shadow-2xl border border-purple-500/40 group hover:scale-[1.03] transition-all duration-300 bg-gradient-to-br from-[#1e293b] via-[#2d225a] to-[#1e293b]"
+            >
+              <div class="relative">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+                  class="w-20 h-20 mx-auto mt-8 mb-2 drop-shadow-lg"
+                  alt="InsightJob"
+                />
+                <div
+                  class="absolute top-4 right-4 bg-purple-700/80 text-xs text-white px-3 py-1 rounded-full font-mono shadow"
+                >
+                  Data Science
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1 justify-between">
+                <h3 class="text-xl font-bold text-purple-200 mb-2">
+                  InsightJob
+                </h3>
+                <p class="text-gray-300 text-sm mb-4 flex-1">
+                  Programa para prever seu sucesso no mercado de TI. Projeto de
+                  análise de dados.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 text-xs mb-4">
+                  <span
+                    class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                    >Python</span
+                  >
+                  <span class="bg-gray-800/60 text-gray-300 px-2 py-0.5 rounded"
+                    >Jupyter</span
+                  >
+                </div>
+                <div class="flex gap-3 justify-center mt-auto">
+                  <a
+                    href="https://github.com/peuccoelho/insightsjob"
+                    target="_blank"
+                    class="px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
+                    >Ver Projeto</a
+                  >
+                </div>
+              </div>
             </div>
-            <div class="flex gap-3 mt-3 text-sm">
-              <a
-                href="https://github.com/peuccoelho/insightsjob"
-                target="_blank"
-                class="text-purple-300 hover:underline transition"
-                >Ver Projeto</a
-              >
+            <!-- Projeto: Papudim -->
+            <div
+              class="code-card rounded-3xl p-0 overflow-hidden flex flex-col shadow-2xl border border-purple-500/40 group hover:scale-[1.03] transition-all duration-300 bg-gradient-to-br from-[#1e293b] via-[#2d225a] to-[#1e293b]"
+            >
+              <div class="relative">
+                <img
+                  src="papudimlogo.png"
+                  class="w-20 h-20 mx-auto mt-8 mb-2 drop-shadow-lg"
+                  alt="Papudim"
+                />
+                <div
+                  class="absolute top-4 right-4 bg-pink-600/80 text-xs text-white px-3 py-1 rounded-full font-mono shadow"
+                >
+                  E-commerce
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1 justify-between">
+                <h3 class="text-xl font-bold text-purple-200 mb-2">Papudim</h3>
+                <p class="text-gray-300 text-sm mb-4 flex-1">
+                  Loja virtual de vendas de pudim. API de pagamentos e dashboard
+                  para administrador.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 text-xs mb-4">
+                  <span
+                    class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                    >HTML</span
+                  >
+                  <span
+                    class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                    >Tailwind</span
+                  >
+                  <span
+                    class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                    >NodeJS</span
+                  >
+                </div>
+                <div class="flex gap-3 justify-center mt-auto">
+                  <a
+                    href="https://github.com/peuccoelho/homepudimback"
+                    target="_blank"
+                    class="px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
+                    >Ver Projeto</a
+                  >
+                  <a
+                    href="https://papudim.netlify.app/"
+                    class="px-4 py-2 rounded-full bg-green-600/40 text-white font-semibold opacity-40 cursor-not-allowed"
+                    title="Deploy indisponível"
+                    >Ver Deploy</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Projeto: StackPeu CLI -->
+            <div
+              class="code-card rounded-3xl p-0 overflow-hidden flex flex-col shadow-2xl border border-purple-500/40 group hover:scale-[1.03] transition-all duration-300 bg-gradient-to-br from-[#1e293b] via-[#2d225a] to-[#1e293b]"
+            >
+              <div class="relative">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+                  class="w-20 h-20 mx-auto mt-8 mb-2 drop-shadow-lg"
+                  alt="StackPeu CLI"
+                />
+                <div
+                  class="absolute top-4 right-4 bg-cyan-600/80 text-xs text-white px-3 py-1 rounded-full font-mono shadow"
+                >
+                  CLI Tool
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1 justify-between">
+                <h3 class="text-xl font-bold text-purple-200 mb-2">
+                  StackPeu CLI
+                </h3>
+                <p class="text-gray-300 text-sm mb-4 flex-1">
+                  CLI para projetos Front, Back ou Full-Stack. Para otimizar o
+                  tempo da sua equipe.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 text-xs mb-4">
+                  <span
+                    class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                    >Python</span
+                  >
+                </div>
+                <div class="flex gap-3 justify-center mt-auto">
+                  <a
+                    href="https://github.com/peuccoelho/StackPeu-CLI"
+                    target="_blank"
+                    class="px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
+                    >Ver Projeto</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Projeto: Papudim -->
-        <div class="group relative">
-          <div
-            class="rounded-3xl border border-purple-500/30 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300 shadow-xl p-6 xs:p-8 flex flex-col gap-5 h-full items-center text-center transform hover:scale-[1.02]"
-            data-aos="fade-up"
-            data-aos-delay="0"
-            data-aos-duration="800"
-          >
-            <div class="flex items-center gap-3 justify-center">
-              <img src="papudimlogo.png" class="w-10 h-10" alt="Papudim" />
-              <span class="text-lg font-semibold text-purple-200">Papudim</span>
-            </div>
-            <p class="text-gray-200 text-sm flex-1">
-              Loja virtual de vendas de pudim. API de pagamentos e dashboard
-              para administrador.
-            </p>
-            <div class="flex flex-wrap justify-center gap-2 text-xs">
-              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
-                >HTML</span
-              >
-              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
-                >Tailwind</span
-              >
-              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
-                >NodeJS</span
-              >
-            </div>
-            <div class="flex gap-3 mt-3 text-sm">
-              <a
-                href="https://github.com/peuccoelho/homepudimback"
-                target="_blank"
-                class="text-purple-300 hover:underline transition"
-                >Ver Projeto</a
-              >
-              <span class="text-gray-500">|</span>
-              <a
-                href="https://papudim.netlify.app/"
-                class="text-green-300 hover:underline transition opacity-40"
-                title="Deploy indisponível"
-                >Ver Deploy</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Projeto: StackPeu CLI -->
-        <div class="group relative">
-          <div
-            class="rounded-3xl border border-purple-500/30 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-all duration-300 shadow-xl p-6 xs:p-8 flex flex-col gap-5 h-full items-center text-center transform hover:scale-[1.02]"
-            data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-duration="800"
-          >
-            <div class="flex items-center gap-3 justify-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
-                class="w-10 h-10"
-                alt="StackPeu CLI"
-              />
-              <span class="text-lg font-semibold text-purple-200"
-                >StackPeu CLI</span
-              >
-            </div>
-            <p class="text-gray-200 text-sm flex-1">
-              CLI para projetos Front, Back ou Full-Stack. Para otimizar o tempo
-              da sua equipe.
-            </p>
-            <div class="flex flex-wrap justify-center gap-2 text-xs">
-              <span class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
-                >Python</span
-              >
-            </div>
-            <div class="flex gap-3 mt-3 text-sm">
-              <a
-                href="https://github.com/peuccoelho/StackPeu-CLI"
-                target="_blank"
-                class="text-purple-300 hover:underline transition"
-                >Ver Projeto</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </main>
 
     <footer class="text-center py-8 text-gray-500 text-xs relative z-10 px-4">
