@@ -6,15 +6,6 @@
     <title>Pedro Coelho | Portfólio</title>
     <link rel="icon" href="Chat.png" />
     <meta
-      name="description"
-      content="Portfólio criativo de Pedro Coelho - Desenvolvedor Front-end e artista digital."
-    />
-    <meta property="og:title" content="Pedro Coelho | Portfólio" />
-    <meta
-      property="og:description"
-      content="Conheça os projetos e habilidades de Pedro Coelho, desenvolvedor e criador digital."
-    />
-    <meta
       property="og:image"
       content="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
     />
@@ -35,27 +26,29 @@
       }
       body {
         font-family: "Inter", sans-serif;
-        background: #0f172a;
-        color: white;
+        background: linear-gradient(120deg, #0f172a 60%, #1e293b 100%);
+        color: #f3f4f6;
         overflow-x: hidden;
+        min-height: 100vh;
       }
-
-      /* Hero único com grid terminal */
       .terminal-grid {
-        background-color: #0f172a;
+        background: transparent;
       }
-
       .code-card {
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(147, 51, 234, 0.3);
-        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(16px) saturate(180%);
+        border: 1.5px solid rgba(147, 51, 234, 0.25);
+        background: rgba(30, 41, 59, 0.85);
+        box-shadow: 0 8px 32px rgba(80, 0, 120, 0.12);
+        transition: transform 0.2s, box-shadow 0.2s;
       }
-
+      .code-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 16px 48px rgba(147, 51, 234, 0.18);
+      }
       .typing-cursor::after {
         content: "|";
         animation: blink 1s infinite;
       }
-
       @keyframes blink {
         0%,
         50% {
@@ -66,15 +59,13 @@
           opacity: 0;
         }
       }
-
       .floating-shape {
         position: absolute;
         border-radius: 9999px;
         filter: blur(40px);
-        opacity: 0.4;
+        opacity: 0.35;
         animation: float 12s ease-in-out infinite;
       }
-
       @keyframes float {
         0% {
           transform: translateY(0) rotate(0deg);
@@ -86,11 +77,10 @@
           transform: translateY(0) rotate(360deg);
         }
       }
-
       .glitch {
         position: relative;
+        letter-spacing: 1px;
       }
-
       .glitch::before,
       .glitch::after {
         content: attr(data-text);
@@ -99,84 +89,128 @@
         left: 0;
         width: 100%;
         height: 100%;
+        pointer-events: none;
       }
-
       .glitch::before {
-        animation: glitch-1 0.5s infinite;
+        animation: glitch-1 0.5s infinite linear alternate-reverse;
         color: #a855f7;
         z-index: -1;
+        opacity: 0.7;
       }
-
       .glitch::after {
-        animation: glitch-2 0.5s infinite;
+        animation: glitch-2 0.5s infinite linear alternate-reverse;
         color: #3d0150;
         z-index: -2;
+        opacity: 0.5;
       }
-
       @keyframes glitch-1 {
         0%,
-        14%,
-        15%,
-        49%,
-        50%,
-        99%,
         100% {
           transform: translate(0);
         }
-        15%,
-        49% {
+        20% {
           transform: translate(-2px, -1px);
         }
-      }
-
-      @keyframes glitch-2 {
-        0%,
-        20%,
-        21%,
-        62%,
-        63%,
-        99%,
-        100% {
-          transform: translate(0);
+        40% {
+          transform: translate(-1px, 2px);
         }
-        21%,
-        62% {
+        60% {
+          transform: translate(-3px, 1px);
+        }
+        80% {
           transform: translate(2px, 1px);
         }
       }
-
-      /* Navegação fixa melhorada */
+      @keyframes glitch-2 {
+        0%,
+        100% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(2px, 1px);
+        }
+        40% {
+          transform: translate(1px, -2px);
+        }
+        60% {
+          transform: translate(3px, -1px);
+        }
+        80% {
+          transform: translate(-2px, -1px);
+        }
+      }
       .nav-fixed {
         backdrop-filter: blur(20px);
-        background: rgba(15, 23, 42, 0.85);
-        border: 1px solid rgba(147, 51, 234, 0.4);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        background: rgba(15, 23, 42, 0.92);
+        border: 1.5px solid rgba(147, 51, 234, 0.35);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
       }
-
       .nav-item {
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 8px 16px;
-        border-radius: 12px;
-        transition: all 0.3s ease;
+        padding: 8px 18px;
+        border-radius: 14px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
+        font-weight: 500;
       }
-
       .nav-item:hover {
-        background: rgba(147, 51, 234, 0.2);
-        transform: translateY(-1px);
-      }
-
-      .nav-item.active {
-        background: rgba(147, 51, 234, 0.3);
+        background: rgba(147, 51, 234, 0.18);
         color: #a855f7;
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 2px 8px rgba(147, 51, 234, 0.08);
       }
-
+      .nav-item.active {
+        background: rgba(147, 51, 234, 0.32);
+        color: #a855f7;
+        box-shadow: 0 2px 12px rgba(147, 51, 234, 0.12);
+      }
       section {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
         scroll-margin-top: 100px;
+      }
+      .btn-animated {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.2s;
+      }
+      .btn-animated::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(90deg, #a855f7 0%, #f472b6 100%);
+        opacity: 0.18;
+        border-radius: 50%;
+        z-index: -1;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .btn-animated:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .btn-animated:hover {
+        color: #fff;
+      }
+      .card-hover {
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .card-hover:hover {
+        box-shadow: 0 8px 32px rgba(80, 0, 120, 0.18);
+        transform: translateY(-6px) scale(1.03);
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        background: #181e2a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #a855f7;
+        border-radius: 8px;
       }
     </style>
   </head>
@@ -209,32 +243,9 @@
           <span class="hidden sm:inline">home</span>
         </a>
         <a
-          href="#sobre"
+          href="#projetos"
           class="nav-item text-gray-300 hover:text-purple-400"
-          data-section="sobre"
-        >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fill-rule="evenodd"
-              d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          <span class="hidden sm:inline">about</span>
-        </a>
-        <a
-          href="#habilidades"
-          class="nav-item text-gray-300 hover:text-purple-400"
-          data-section="habilidades"
-        >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="hidden sm:inline">skills</span>
-        </a>
-        <a
-          href="projetos.html"
-          class="nav-item text-gray-300 hover:text-purple-400"
+          data-section="projetos"
         >
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -246,22 +257,33 @@
           <span class="hidden sm:inline">projects</span>
         </a>
         <a
+          href="#sobre"
+          class="nav-item text-gray-300 hover:text-purple-400"
+          data-section="sobre"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"></svg>
+          <span class="hidden sm:inline">about</span>
+        </a>
+        <a
+          href="#habilidades"
+          class="nav-item text-gray-300 hover:text-purple-400"
+          data-section="habilidades"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"></svg>
+          <span class="hidden sm:inline">skills</span>
+        </a>
+        <a
           href="#contato"
           class="nav-item text-gray-300 hover:text-purple-400"
           data-section="contato"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-            />
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-          </svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"></svg>
           <span class="hidden sm:inline">contact</span>
         </a>
       </div>
     </nav>
 
-    <!-- Hero Section Revolucionado -->
+    <!-- Hero Section -->
     <section
       id="hero"
       class="min-h-screen flex items-center justify-center relative terminal-grid"
@@ -273,16 +295,15 @@
         <div class="block lg:hidden col-span-1 mb-8">
           <div class="flex flex-col items-center justify-center">
             <img
+              class="w-32 h-32 rounded-full border-4 border-purple-500/50 shadow-xl mb-4"
               src="peu.png"
               alt="Pedro Coelho"
-              class="w-32 h-32 rounded-full border-4 border-purple-500/50 shadow-xl mb-4"
             />
-            <h1 class="text-4xl font-bold mb-2 text-white">
-              <span class="glitch" data-text="Pedro">Pedro</span>
-              <span
-                class="block bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent"
-                >Coelho</span
-              >
+            <h1
+              class="text-4xl font-bold mb-2 text-white glitch"
+              data-text="Pedro Coelho"
+            >
+              Pedro Coelho
             </h1>
             <p class="text-xl text-gray-300 mb-2">Desenvolvedor Full-Stack</p>
             <p class="text-sm text-purple-400 mb-4 font-mono">
@@ -295,7 +316,6 @@
           class="code-card rounded-2xl p-6 relative col-span-1"
           data-aos="fade-right"
         >
-          <!-- Terminal header -->
           <div
             class="flex items-center gap-2 mb-4 border-b border-purple-500/30 pb-2"
           >
@@ -304,104 +324,61 @@
             <div class="w-3 h-3 rounded-full bg-green-500"></div>
             <span class="text-xs text-gray-400 ml-2">pedro_coelho.dev</span>
           </div>
-          <!-- Código terminal -->
           <div class="font-mono text-sm space-y-2">
-            <div class="text-purple-400">
-              const <span class="text-blue-400">developer</span> = {
-            </div>
+            <div
+              class="text-purple-400 typing-cursor"
+              id="terminal-typing"
+            ></div>
             <div class="ml-4 text-gray-300">
-              name: <span class="text-green-400">"Pedro Coelho"</span>,
+              // Portfólio dinâmico e criativo
             </div>
-            <div class="ml-4 text-gray-300">
-              role: <span class="text-green-400">"Full-Stack Developer"</span>,
+            <div class="ml-4 text-gray-300">const dev = &#123;</div>
+            <div class="ml-8 text-gray-300">
+              name: <span class="text-purple-400">'Pedro Coelho'</span>,
             </div>
-            <div class="ml-4 text-gray-300">
-              location: <span class="text-green-400">"Salvador, BA"</span>,
+            <div class="ml-8 text-gray-300">
+              stack: <span class="text-purple-400">'Full-Stack'</span>,
             </div>
-            <div class="ml-4 text-gray-300">
-              passion:
-              <span class="text-green-400">"Creating digital solutions"</span>,
+            <div class="ml-8 text-gray-300">
+              skills: [<span class="text-purple-400"
+                >'JS', 'Python', 'Node', 'Tailwind'</span
+              >]
             </div>
-            <div class="ml-4 text-gray-300">
-              coffee: <span class="text-yellow-400">true</span>,
-            </div>
-            <div class="text-purple-400">};</div>
+            <div class="ml-4 text-gray-300">&#125;;</div>
+            <div class="text-purple-400">console.log(dev);</div>
             <div class="mt-4 text-gray-400">
-              <span class="text-purple-400">&gt;</span>
-              <span id="terminal-typing" class="typing-cursor"></span>
+              // Let's build something amazing!
             </div>
           </div>
         </div>
-
         <!-- Lado direito: Apresentação principal (desktop) -->
-        <div class="hidden lg:block text-left col-span-1" data-aos="fade-left">
-          <div class="relative mb-6">
-            <img
-              src="peu.png"
-              alt="Pedro Coelho"
-              class="w-32 h-32 rounded-full border-4 border-purple-500/50 shadow-xl mb-4"
-            />
-            <div
-              class="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-gray-900 animate-pulse"
-            ></div>
-          </div>
-          <h1 class="text-5xl lg:text-7xl font-bold mb-4">
-            <span class="glitch text-white" data-text="Pedro">Pedro</span>
-            <br />
+        <div class="hidden lg:block text-left col-span-1">
+          <h1 class="text-5xl font-extrabold leading-tight mb-4">
+            Olá, eu sou
             <span
-              class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500"
+              >Pedro Coelho</span
             >
-              Coelho
-            </span>
           </h1>
-          <p class="text-xl text-gray-300 mb-2">Desenvolvedor Full-Stack</p>
-          <p class="text-sm text-purple-400 mb-8 font-mono">
-            { Building the future, one line at a time }
+          <p class="text-xl text-gray-300 mb-6">
+            Sou um desenvolvedor
+            <span class="text-purple-400">Full-Stack</span> apaixonado por criar
+            experiências digitais incríveis.
           </p>
-          <!-- Social links únicos -->
-          <div class="flex gap-4 justify-start mb-8">
-            <a
-              href="https://github.com/peuccoelho"
-              target="_blank"
-              class="group flex items-center gap-2 bg-gray-800/80 hover:bg-gray-700/80 px-4 py-2 rounded-full transition backdrop-blur-sm"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
-                alt="GitHub"
-                class="w-5 h-5"
-              />
-              <span class="text-sm opacity-0 group-hover:opacity-100 transition"
-                >GitHub</span
-              >
-            </a>
-            <a
-              href="https://www.linkedin.com/in/pedro-coelho-b537682b1"
-              target="_blank"
-              class="group flex items-center gap-2 bg-gray-800/80 hover:bg-gray-700/80 px-4 py-2 rounded-full transition backdrop-blur-sm"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                alt="LinkedIn"
-                class="w-5 h-5"
-              />
-              <span class="text-sm opacity-0 group-hover:opacity-100 transition"
-                >LinkedIn</span
-              >
-            </a>
-          </div>
-          <!-- CTA buttons únicos -->
-          <div class="flex gap-4 justify-start">
-            <a
-              href="projetos.html"
-              class="px-8 py-3 border-2 border-purple-500 text-purple-400 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition"
-            >
-              Projetos
-            </a>
+          <!-- CTA buttons -->
+          <div class="flex gap-4">
             <a
               href="#contato"
-              class="px-8 py-3 border-2 border-purple-500 text-purple-400 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition"
+              class="btn-animated px-8 py-3 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
             >
-              Fale Comigo
+              Vamos Conversar
+            </a>
+            <a
+              href="projetos.html"
+              class="px-8 py-3 rounded-full bg-gray-800 text-white font-semibold opacity-70 cursor-not-allowed"
+              title="Em breve"
+            >
+              Ver Projetos
             </a>
           </div>
         </div>
@@ -417,6 +394,184 @@
           <div
             class="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-pulse"
           ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos Unificada -->
+    <section id="projetos" class="terminal-grid relative py-16 px-4">
+      <div class="absolute inset-0 bg-[#0f172a]"></div>
+      <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <div
+              class="h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1"
+            ></div>
+            <div
+              class="flex items-center gap-2 bg-gray-800/50 px-4 py-2 rounded-full"
+            >
+              <svg
+                class="w-5 h-5 text-purple-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="font-mono text-purple-400">projetos.json</span>
+            </div>
+            <div
+              class="h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1"
+            ></div>
+          </div>
+          <h2
+            class="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+          >
+            Projetos em Destaque
+          </h2>
+          <p class="text-gray-400 max-w-xl mx-auto mt-4">
+            Veja alguns dos meus trabalhos mais recentes.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Projeto: InsightJob -->
+          <div
+            class="code-card card-hover rounded-3xl p-0 overflow-hidden flex flex-col shadow-2xl border border-purple-500/40 group hover:scale-[1.03] transition-all duration-300 bg-gradient-to-br from-[#1e293b] via-[#2d225a] to-[#1e293b]"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+                class="w-20 h-20 mx-auto mt-8 mb-2 drop-shadow-lg"
+                alt="InsightJob"
+              />
+              <div
+                class="absolute top-4 right-4 bg-purple-700/80 text-xs text-white px-3 py-1 rounded-full font-mono shadow"
+              >
+                Data Science
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <h3 class="text-xl font-bold text-purple-200 mb-2">InsightJob</h3>
+              <p class="text-gray-300 text-sm mb-4 flex-1">
+                Programa para prever seu sucesso no mercado de TI. Projeto de
+                análise de dados.
+              </p>
+              <div class="flex flex-wrap justify-center gap-2 text-xs mb-4">
+                <span
+                  class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                  >Python</span
+                >
+                <span class="bg-gray-800/60 text-gray-300 px-2 py-0.5 rounded"
+                  >Jupyter</span
+                >
+              </div>
+              <div class="flex gap-3 justify-center mt-auto">
+                <a
+                  href="https://github.com/peuccoelho/insightsjob"
+                  target="_blank"
+                  class="btn-animated px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
+                  >Ver Projeto</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Projeto: Papudim -->
+          <div
+            class="code-card card-hover rounded-3xl p-0 overflow-hidden flex flex-col shadow-2xl border border-purple-500/40 group hover:scale-[1.03] transition-all duration-300 bg-gradient-to-br from-[#1e293b] via-[#2d225a] to-[#1e293b]"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative">
+              <img
+                src="papudimlogo.png"
+                class="w-20 h-20 mx-auto mt-8 mb-2 drop-shadow-lg"
+                alt="Papudim"
+              />
+              <div
+                class="absolute top-4 right-4 bg-pink-600/80 text-xs text-white px-3 py-1 rounded-full font-mono shadow"
+              >
+                E-commerce
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <h3 class="text-xl font-bold text-purple-200 mb-2">Papudim</h3>
+              <p class="text-gray-300 text-sm mb-4 flex-1">
+                Loja virtual de vendas de pudim. API de pagamentos e dashboard
+                para administrador.
+              </p>
+              <div class="flex flex-wrap justify-center gap-2 text-xs mb-4">
+                <span
+                  class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                  >HTML</span
+                >
+                <span
+                  class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                  >Tailwind</span
+                >
+                <span
+                  class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                  >NodeJS</span
+                >
+              </div>
+              <div class="flex gap-3 justify-center mt-auto">
+                <a
+                  href="https://github.com/peuccoelho/homepudimback"
+                  target="_blank"
+                  class="btn-animated px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
+                  >Ver Projeto</a
+                >
+                <a
+                  href="https://papudim.netlify.app/"
+                  class="px-4 py-2 rounded-full bg-green-600/40 text-white font-semibold opacity-40 cursor-not-allowed"
+                  title="Deploy indisponível"
+                  >Ver Deploy</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Projeto: StackPeu CLI -->
+          <div
+            class="code-card card-hover rounded-3xl p-0 overflow-hidden flex flex-col shadow-2xl border border-purple-500/40 group hover:scale-[1.03] transition-all duration-300 bg-gradient-to-br from-[#1e293b] via-[#2d225a] to-[#1e293b]"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="relative">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+                class="w-20 h-20 mx-auto mt-8 mb-2 drop-shadow-lg"
+                alt="StackPeu CLI"
+              />
+              <div
+                class="absolute top-4 right-4 bg-cyan-600/80 text-xs text-white px-3 py-1 rounded-full font-mono shadow"
+              >
+                CLI Tool
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <h3 class="text-xl font-bold text-purple-200 mb-2">
+                StackPeu CLI
+              </h3>
+              <p class="text-gray-300 text-sm mb-4 flex-1">
+                CLI para projetos Front, Back ou Full-Stack. Para otimizar o
+                tempo da sua equipe.
+              </p>
+              <div class="flex flex-wrap justify-center gap-2 text-xs mb-4">
+                <span
+                  class="bg-purple-700/30 text-purple-200 px-2 py-0.5 rounded"
+                  >Python</span
+                >
+              </div>
+              <div class="flex gap-3 justify-center mt-auto">
+                <a
+                  href="https://github.com/peuccoelho/StackPeu-CLI"
+                  target="_blank"
+                  class="btn-animated px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
+                  >Ver Projeto</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
