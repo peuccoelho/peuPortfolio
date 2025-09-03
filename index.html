@@ -261,7 +261,11 @@
           class="nav-item text-gray-300 hover:text-purple-400"
           data-section="sobre"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"></svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M18 13a1 1 0 01-1 1h-1v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2H3a1 1 0 110-2h1V7a5 5 0 1110 0v5h1a1 1 0 011 1zM8 7a3 3 0 116 0v5H8V7z"
+            />
+          </svg>
           <span class="hidden sm:inline">about</span>
         </a>
         <a
@@ -269,7 +273,11 @@
           class="nav-item text-gray-300 hover:text-purple-400"
           data-section="habilidades"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"></svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M11 17a1 1 0 01-1-1v-1.586l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 13H7a1 1 0 01-1-1v-2a1 1 0 011-1h1.586l-2.293-2.293a1 1 0 111.414-1.414L11 10.586V9a1 1 0 112 0v1.586l2.293-2.293a1 1 0 111.414 1.414L13.414 11H15a1 1 0 011 1v2a1 1 0 01-1 1h-1.586l2.293 2.293a1 1 0 01-1.414 1.414L13 15.414V17a1 1 0 01-1 1z"
+            />
+          </svg>
           <span class="hidden sm:inline">skills</span>
         </a>
         <a
@@ -277,7 +285,12 @@
           class="nav-item text-gray-300 hover:text-purple-400"
           data-section="contato"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"></svg>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            />
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+          </svg>
           <span class="hidden sm:inline">contact</span>
         </a>
       </div>
@@ -399,40 +412,51 @@
     </section>
 
     <!-- Seção Projetos Unificada -->
-    <section id="projetos" class="terminal-grid relative py-16 px-4">
+    <section
+      id="projetos"
+      class="terminal-grid relative py-8 sm:py-16 px-2 sm:px-4"
+    >
       <div class="absolute inset-0 bg-[#0f172a]"></div>
       <div class="relative z-10 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="text-center mb-6 sm:mb-12">
+          <div
+            class="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-4"
+          >
             <div
               class="h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1"
             ></div>
             <div
-              class="flex items-center gap-2 bg-gray-800/50 px-4 py-2 rounded-full"
+              class="flex items-center gap-1 sm:gap-2 bg-gray-800/50 px-3 sm:px-4 py-2 rounded-full"
             >
               <svg
-                class="w-5 h-5 text-purple-400"
+                class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span class="font-mono text-purple-400">projetos.json</span>
+              <span class="font-mono text-purple-400 text-xs sm:text-base"
+                >projetos.json</span
+              >
             </div>
             <div
               class="h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1"
             ></div>
           </div>
           <h2
-            class="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+            class="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
           >
             Projetos em Destaque
           </h2>
-          <p class="text-gray-400 max-w-xl mx-auto mt-4">
+          <p
+            class="text-gray-400 max-w-xs sm:max-w-xl mx-auto mt-2 sm:mt-4 text-sm sm:text-base"
+          >
             Veja alguns dos meus trabalhos mais recentes.
           </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8"
+        >
           <!-- Projeto: InsightJob -->
           <div
             class="code-card card-hover rounded-3xl p-0 overflow-hidden flex flex-col shadow-2xl border border-purple-500/40 group hover:scale-[1.03] transition-all duration-300 bg-gradient-to-br from-[#1e293b] via-[#2d225a] to-[#1e293b]"
